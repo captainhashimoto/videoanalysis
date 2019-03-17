@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+</head>
+<body>
+  <nav>
+  <% if !current_user.nil? %>
+	  <a href="/" class="left-button">TOP</a>
+		<div class="nav-right">
+		<a href="/new" class="right-button">投稿</a>
+		<a href="/home" class="right-button">自分の動画</a>
+		<a href="/search" class="right-button">動画検索</a>
+		<a href="/sign_out" class="right-button">ログアウト</a>
+		</div>
+  <% else %>
+    <a href="/" class="left-button">TOP</a>
+		<div class="nav-right">
+		<a href="/sign_in" class="right-button">ログイン</a>
+    <a href="/sign_up" class="right-button">新規登録</a>
+		</div>
+  <% end %>
+	</nav>
+  <%= yield %>
+</body>
+</html>

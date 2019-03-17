@@ -1,0 +1,20 @@
+<div class="search center-vertical">
+<h1>動画投稿</h1>
+<form action="/new" method="POST">
+  <input type="text" name="video_id" placeholder="動画ID">
+  <select name="athlete">
+    <option selected="selected">プレイヤー名</option>
+    <% @users.each do |user| %>
+      <option value="<%= user.name %>"><%= user.name %></option>
+    <% end %>
+  </select>
+  <select name="event">
+    <option selected="selected">種目名</option>
+    <option value="Run">Run</option>
+    <option value="Swim">Swim</option>
+    <option value="Bike">Bike</option>
+  </select>
+  <input type="text" name="commnet" placeholder="コメント">
+  <input type="submit" value="投稿">
+</form>
+</div>

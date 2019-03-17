@@ -1,0 +1,13 @@
+<div class="home center-vertical">
+<div class="post-wrapper">
+<%if !@videos.nil?%>
+  <% @videos.each do |video| %>
+  	<div class="post center-vertical">
+				<iframe width="240" height="135" src="https://www.youtube.com/embed/<%= video.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p class="post-main"><%= video.athlete %>/<%= video.event %></p>
+				<p class="post-comment">コメント：<%= video.commnet %></p>
+		</div>
+	<%end%>
+<%end%>
+</div>
+</div>

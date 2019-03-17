@@ -1,0 +1,15 @@
+<div class="user center-vertical">
+<% if current_user.nil? %>
+  <div class="form-wrapper">
+		<form action="/sign_in" method="POST">
+		<div class="form-text">
+		  <input type="text" name="name" placeholder="ユーザー名"><br>
+			<input type="password" name="password" placeholder="パスワード"><br>
+		</div>
+		<div class="form-submit">
+			<input type="submit" value="ログイン">
+		</div>
+		</form>
+	</div>
+<% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="search center-vertical">
+<h1>検索フォーム</h1>
+<form action="/search" method="POST">
+  <select name="athlete">
+    <option selected="selected">プレイヤー名</option>
+    <% @users.each do |user| %>
+      <option value="<%= user.name %>"><%= user.name %></option>
+    <% end %>
+  </select>
+  <select name="event">
+    <option selected="selected">種目名</option>
+    <option value="Run">Run</option>
+    <option value="Swim">Swim</option>
+    <option value="Bike">Bike</option>
+  </select>
+  <input type="submit" value="検索">
+</form>
+<h1>検索結果</h1>
+<div class="post-wrapper">
+  <% if !@videos.nil? %>
+    <% @videos.each do |video| %>
+    <div class="post center-vertical">
+      <iframe width="240" height="135" src="https://www.youtube.com/embed/<%= video.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p class="post-main"><%= video.athlete %>/<%= video.event %></p>
+				<p class="post-comment">コメント：<%= video.commnet %></p>
+      </div>
+      <% end %>
+  <% end %>
+    </div>
+</div>
